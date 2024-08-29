@@ -13,3 +13,6 @@ function App() {
 }
 
 export default App;
+
+
+// npx json-server --watch data/db.json --port 8000      ==>for json-server watch api
