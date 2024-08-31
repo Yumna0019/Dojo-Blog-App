@@ -4,12 +4,16 @@ import { BrowserRouter as Router , Rote , Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
