@@ -23,9 +23,6 @@ const CreateBlog = () => {
             setIsPending(false);
             backToHome.push('/');
           });
-           setTitle('');
-           setBody('');
-           setAuthor('student');
     }
 
     return ( 
