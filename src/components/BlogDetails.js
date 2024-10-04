@@ -1,18 +1,37 @@
+import { useEffect, useState } from "react";
 import { useHistory , useParams } from "react-router-dom";
-import useFetch from "./useFetch";
 
 const BlogDetails = () => {
-    const { id } = useParams();
-    const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    const {id} = useParams();
     const backToHome = useHistory();
+    const [blog, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const storedBlogs = JSON.parse(localStorage.getItem('blogs'));
+        if (storedBlogs) {
+            const foundBlog = storedBlogs.find((b) => b.id === parseInt(id));
+            if (foundBlog) {
+                setBlogs(foundBlog);
+                setIsPending(false);
+            } else {
+                setError('Blog not found');
+                setIsPending(false);
+            }
+        } else {
+            setError('No blogs found');
+            setIsPending(false);
+        }
+    },[id]);
 
     const handleClick = () => {
-        fetch('http://localhost:8000/blogs/' + blog.id, {
-          method: 'DELETE'
-        }).then(() => {
-         backToHome.push('/');
-        }) 
-    }
+        const storedBlogs = JSON.parse(localStorage.getItem('blogs'));
+        const updateBlogs = storedBlogs.filter((b) => b.id !== parseInt(id));
+        localStorage.setItem('blogs', JSON.stringify(updateBlogs));
+        backToHome.push('/');
+    };
+
 
     return (  
         <div className="blog-details">

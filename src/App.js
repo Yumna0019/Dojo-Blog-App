@@ -33,6 +33,3 @@ function App() {
 
 export default App;
 
-
-// npx json-server --watch data/db.json --port 8000      ==>for json-server watch api
-// npm install react-router-dom@5                        ==>for react-router-dom

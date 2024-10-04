@@ -5,24 +5,19 @@ const CreateBlog = () => {
     const [ title , setTitle] = useState('');
     const [ body , setBody] = useState('');
     const [ author , setAuthor] = useState('student');
-    const [isPending, setIsPending] = useState(false);
     const backToHome = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = {title, body, author};
-        
-        setIsPending(true);
 
-        fetch('http://localhost:8000/blogs/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(blog)
-          }).then(() => {
-            console.log('new blog added');
-            setIsPending(false);
-            backToHome.push('/');
-          });
+        let blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        blog.id = blogs.length + 1;
+        blogs.push(blog);
+
+        localStorage.setItem('blogs', JSON.stringify(blogs));
+
+        backToHome.push('/');
     }
 
     return ( 
@@ -46,9 +41,9 @@ const CreateBlog = () => {
                 >
                     <option value="Student">Student</option>
                     <option value="Professor">Professor</option>
+                    <option value="Anonymous">Anonymous</option>
                 </select>
-                { !isPending && <button type="Submit">Add Blog</button> }
-                { isPending && <button disabled>Adding Blog...</button> }
+                <button type="Submit">Add Blog</button> 
             </form>
         </div>
      );
