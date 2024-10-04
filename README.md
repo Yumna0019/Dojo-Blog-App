@@ -1,6 +1,6 @@
 # 📝 Dojo Blog App
 
-Welcome to the **Dojo Blog App**! 🌐 This is a dynamic blog platform built with React, designed for users to create, edit, and manage their blogs seamlessly. With local storage, your blog posts are saved directly in your browser, making the experience lightweight and fast. Ready to start blogging? 🎉
+Welcome to the **Dojo Blog App**! 📝 This is a dynamic blog platform built with React, designed for users to create, edit, and manage their blogs seamlessly. With local storage, your blog posts are saved directly in your browser, making the experience lightweight and fast. Ready to start blogging? 🎉
 
 ## 🌐 Live Demo
 
