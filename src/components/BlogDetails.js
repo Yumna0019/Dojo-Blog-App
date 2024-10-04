@@ -32,6 +32,9 @@ const BlogDetails = () => {
         backToHome.push('/');
     };
 
+    const handleEdit = () => {
+        backToHome.push(`/edit/${id}`);
+    };
 
     return (  
         <div className="blog-details">
@@ -44,6 +47,7 @@ const BlogDetails = () => {
                     <div>{ blog.body }</div>
                     <button onClick={() => backToHome.push('/')}>Back</button>
                     <button onClick={handleClick}>Delete</button>
+                    <button onClick={handleEdit}>Edit</button>
                 </article>
             )}
         </div>

@@ -78,22 +78,23 @@
   margin-right: 10px; 
 }
 
-/* create new blog form */
-.create {
+/* create new blog form or edit from */
+.create , .edit {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
-.create label {
+.create label , .edit label  {
   text-align: left;
   display: block;
 }
-.create h2 {
+.create h2 , .edit h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 30px;
 }
-.create input, .create textarea, .create select {
+.create input, .create textarea, .create select,
+.edit input, .edit textarea, .edit select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -101,7 +102,7 @@
   box-sizing: border-box;
   display: block;
 }
-.create button {
+.create button, .edit button {
   background: #f1356d;
   color: #fff;
   width: 90px;
@@ -111,7 +112,7 @@
   cursor: pointer;
 }
 
-.create button:hover {
+.create button:hover, .edit button:hover {
   background-color: #ff4a7e;
 }
 
