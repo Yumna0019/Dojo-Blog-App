@@ -26,7 +26,7 @@ Check out the [live demo](https://dojo-blog-app-react.netlify.app/) of the Dojo 
 
 ---
 
-## 🧑‍💻 How to Use
+## 💻 How to Use
 
 1. **Create a Post**: Click on the "New Blog" button and start writing your blog post.
 2. **Edit Your Post**: Want to make changes? Click the "Edit" button on any post to update it.
